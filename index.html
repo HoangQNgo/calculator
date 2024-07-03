@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Calculator</title>
+    <!-- Bootstrap CSS for overall layout and style-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Internal CSS for changing the button/box sizes-->
+    <style>
+        .btn-calculator {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+        }
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Container to center the content and add margins -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <!-- Card to contain the calculator elements -->
+                <div class="card calculator">
+                    <div class="card-body">
+                        <!-- Title of the calculator -->
+                        <h5 class="card-title text-center mb-4">Awesome Calculator</h5>
+                        <!-- Input field to display the numbers and results -->
+                        <input type="text" class="form-control mb-3" id="display" readonly>
+                        <!-- Buttons for numbers and operations -->
+                        <div class="text-center">
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('7')">7</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('8')">8</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('9')">9</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('+')">+</button><br>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('4')">4</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('5')">5</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('6')">6</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('-')">-</button><br>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('1')">1</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('2')">2</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('3')">3</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('*')">*</button><br>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('0')">0</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('.')">.</button>
+                            <button class="btn btn-success btn-calculator" onclick="calculate()">=</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('/')">/</button><br>
+                            <button class="btn btn-danger btn-calculator" onclick="clearDisplay()">C</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+<!-- codes improved by llm
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Awesome Calculator</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn-calculator {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+        }
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Let's make sure our display can handle long numbers */
+        #display {
+            font-size: 1.5em;
+            text-align: right;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card calculator">
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-4">Super Awesome Calculator</h5>
+                        <input type="text" class="form-control mb-3" id="display" readonly>
+                        <div class="text-center">
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('7')">7</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('8')">8</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('9')">9</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('+')">+</button><br>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('4')">4</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('5')">5</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('6')">6</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('-')">-</button><br>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('1')">1</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('2')">2</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('3')">3</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('*')">*</button><br>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('0')">0</button>
+                            <button class="btn btn-light btn-calculator" onclick="appendToDisplay('.')">.</button>
+                            <button class="btn btn-success btn-calculator" onclick="calculate()">=</button>
+                            <button class="btn btn-warning btn-calculator" onclick="setOperator('/')">/</button><br>
+                            <button class="btn btn-danger btn-calculator" onclick="clearAll()">C</button>
+                            <button class="btn btn-info btn-calculator" onclick="clearEntry()">CE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html> -->
